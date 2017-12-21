@@ -1,0 +1,9 @@
+To use this plugin you need to install WhiteboxTools package.
+
+Please visit WhiteboxTools homepage for packages for 64bit systems
+
+http://www.uoguelph.ca/~hydrogeo/software.shtml#WhiteboxTools
+
+After installing WhiteboxTools and plugin you should configure WhiteboxTools
+folder (usually this is directory where WhiteboxTools is installed and
+where whitebox_tools executable file located) in Processing options dialog.

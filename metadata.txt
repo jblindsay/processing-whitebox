@@ -1,0 +1,20 @@
+[general]
+name=Whitebox for Processing
+description=Advanced geospatial data analysis engine
+about=Various spatial analysis tools
+category=Plugins
+version=0.1.0
+qgisMinimumVersion=2.99
+
+icon=icons/whiteboxtools.png
+tags=analysis,processing
+
+author=Alexander Bruy
+email=alexander.bruy@gmail.com
+
+homepage=https://github.com/alexbruy/processing_whitebox
+tracker=https://github.com/alexbruy/processing_whitebox/issues
+repository=https://github.com/alexbruy/processing_whitebox
+
+experimental=True
+deprecated=False

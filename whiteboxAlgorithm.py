@@ -43,7 +43,7 @@ class WhiteboxAlgorithm(QgsProcessingAlgorithm):
         self.descriptionFile = descriptionFile
         self._name = ''
         self._displayName = ''
-        self._group = 'Whitebox Tools'
+        self._group = 'WhiteboxTools'
         self._groupId = 'whiteboxtools'
         self._shortHelp = ''
 
@@ -101,7 +101,8 @@ class WhiteboxAlgorithm(QgsProcessingAlgorithm):
             if isinstance(param, (QgsProcessingParameterRasterLayer, QgsProcessingParameterFeatureSource)):
                 pass
             else:
-                arguments.append('--{}="{}"'.format(param.name(), self.parameterAsInt(parameters, param.name(), context)))
+                arguments.append('--{}="{}"'.format(param.name(),
+                                                    self.parameterAsInt(parameters, param.name(), context)))
 
         for out in self.destinationParameterDefinitions():
             pass

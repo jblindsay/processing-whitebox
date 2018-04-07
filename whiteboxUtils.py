@@ -74,7 +74,8 @@ def version():
             for line in lines:
                 if line.startswith('whitebox-tools'):
                     versionFound = True
-                    whiteboxVersion = versionRegex.search(line.strip()).group(0)
+                    whiteboxVersion = versionRegex.search(
+                        line.strip()).group(0)
                     return whiteboxVersion
             return None
         except:
@@ -87,9 +88,9 @@ def execute(command, feedback=None):
 
     fused_command = ' '.join([str(c) for c in commands])
     QgsMessageLog.logMessage(fused_command, 'Processing', QgsMessageLog.INFO)
-    feedback.pushInfo('WhiteBox Tools command:')
+    feedback.pushInfo('WhiteboxTools command:')
     feedback.pushCommandInfo(fused_command)
-    feedback.pushInfo('WhiteBox Tools command output:')
+    feedback.pushInfo('WhiteboxTools command output:')
 
     loglines = []
     with subprocess.Popen(fused_command,
@@ -106,4 +107,5 @@ def execute(command, feedback=None):
             pass
 
     if ProcessingConfig.getSetting(WHITEBOX_VERBOSE):
-        QgsMessageLog.logMessage('\n'.join(loglines), 'Processing', QgsMessageLog.INFO)
+        QgsMessageLog.logMessage(
+            '\n'.join(loglines), 'Processing', QgsMessageLog.INFO)

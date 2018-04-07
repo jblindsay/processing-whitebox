@@ -49,11 +49,11 @@ class WhiteboxProvider(QgsProcessingProvider):
         return 'whitebox'
 
     def name(self):
-        return 'WhiteBox Tools'
+        return 'WhiteboxTools'
 
     def longName(self):
         version = whiteboxUtils.version()
-        return 'WhiteBox Tools ({})'.format(version) if version is not None else 'WhiteBox Tools'
+        return 'WhiteboxTools ({})'.format(version) if version is not None else 'WhiteboxTools'
 
     def icon(self):
         return QIcon(os.path.join(pluginPath, 'icons', 'whiteboxtools.png'))
@@ -110,14 +110,15 @@ class WhiteboxProvider(QgsProcessingProvider):
         for descriptionFile in os.listdir(folder):
             if descriptionFile.endswith('txt'):
                 try:
-                    alg = WhiteboxAlgorithm(os.path.join(folder, descriptionFile))
+                    alg = WhiteboxAlgorithm(
+                        os.path.join(folder, descriptionFile))
                     if alg.name().strip() != '':
                         self.algs.append(alg)
                     else:
-                        QgsMessageLog.logMessage(self.tr('Could not load WhiteBox Tools algorithm from file: {}'.format(descriptionFile)),
+                        QgsMessageLog.logMessage(self.tr('Could not load WhiteboxTools algorithm from file: {}'.format(descriptionFile)),
                                                  self.tr('Processing'), QgsMessageLog.CRITICAL)
                 except Exception as e:
-                    QgsMessageLog.logMessage(self.tr('Could not load WhiteBox Tools algorithm from file: {}\n{}'.format(descriptionFile, str(e))),
+                    QgsMessageLog.logMessage(self.tr('Could not load WhiteboxTools algorithm from file: {}\n{}'.format(descriptionFile, str(e))),
                                              self.tr('Processing'), QgsMessageLog.CRITICAL)
 
         for a in self.algs:

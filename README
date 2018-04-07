@@ -6,6 +6,8 @@ Group. It is intended to provide a platform for advanced geospatial data
 analysis with applications in both environmental research and the
 geomatics industry. Also it was envisioned from the outset as providing
 an ideal platform for experimenting with novel geospatial analysis methods.
+Please see the [Geomorphometry and Hydrogeomatics Research Group](http://www.uoguelph.ca/~hydrogeo/software.shtml#WhiteboxTools) 
+for further details.
 
 Processing is a geoprocessing environment that can be used to call native
 and third party algorithms from QGIS, making your spatial analysis tasks
